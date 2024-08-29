@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 # Dados de preferência do usuário (podem ser ajustados dinamicamente)
 user_preferences = {
-    'preferred_types': ['outfit', 'weapon', 'backpack'],
-    'preferred_rarities': ['legendary', 'epic'],
+    'preferred_types': ['outfit', 'weapon', 'backpack', 'glider', 'wrap', 'pickaxe', 'contrail'],
+    'preferred_rarities': ['mythic', 'legendary', 'epic', 'rare', 'uncommon', 'common'],
     'max_price': 2000
 }
 
