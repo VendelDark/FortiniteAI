@@ -1,0 +1,32 @@
+{
+    "data": {
+        "featured": [
+            {
+                "id": "SID_Placeholder_239",
+                "name": "Battery",
+                "description": "",
+                "type": "sparks_song",
+                "rarity": "uncommon",
+                "internalRarity": "uncommon",
+                "price": 500,
+                "priceNoDiscount": 500,
+                "categories": "Panel 0",
+                "priority": -1,
+                "banner": "",
+                "offer": "v2:/ec1f09c6f8729d9269346623d03f12eb328636801ed21c586903284c980d17c4",
+                "releaseDate": "2024-08-02",
+                "lastAppearance": "2024-08-28",
+                "interest": 0,
+                "giftAllowed": true,
+                "buyAllowed": true,
+                "image": "https://media.fortniteapi.io/images/a4ac5e133be5f7562af7dda01ad0c7fc/transparent.png",
+                "icon": "https://media.fortniteapi.io/images/a4ac5e133be5f7562af7dda01ad0c7fc/transparent.png",
+                "full_background": "https://media.fortniteapi.io/images/a4ac5e133be5f7562af7dda01ad0c7fc/background_full.en.png",
+                "items": ["sid_placeholder_239"],
+                "otherItemsDetails": [],
+                "videos": [],
+                "customColors": {}
+            }
+        ]
+    }
+}
