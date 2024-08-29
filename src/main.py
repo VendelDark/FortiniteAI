@@ -18,22 +18,42 @@ def get_fortnite_shop():
     else:
         raise Exception(f"Erro na requisição: {response.status_code}")
 
-def recommend_skins(shop_data):
-    print("Dados da loja:", shop_data)  # Verifica o conteúdo completo
-    items = shop_data.get('data', [])  # Acessa a lista de itens
-    print("Itens disponíveis:", items)  # Verifica os itens disponíveis
-    skins = [item for item in items if item.get('type') == 'outfit']  # Filtra por tipo 'outfit'
-    print("Skins filtradas:", skins)  # Verifica as skins filtradas
-    if not skins:
-        print("Nenhuma skin recomendada encontrada.")
-    else:
-        print("Skins recomendadas:")
-        for skin in skins:
-            print(f"Nome: {skin['name']}, Raridade: {skin['rarity']}")
+def get_all_items(shop_data):
+    items = shop_data.get('featured', []) + shop_data.get('daily', []) + shop_data.get('special', [])
+    return items
+
+def item_matches_preferences(item, preferences):
+    # Verifica o tipo do item
+    if item.get('type') not in preferences['preferred_types']:
+        return False
+
+    # Verifica a raridade do item
+    if item.get('rarity') not in preferences['preferred_rarities']:
+        return False
+
+    # Verifica o preço do item
+    if item.get('price', 0) > preferences['max_price']:
+        return False
+
+    return True
+
+def recommend_items(shop_data, user_preferences):
+    items = get_all_items(shop_data)
+    recommended_items = []
+
+    for item in items:
+        if item_matches_preferences(item, user_preferences):
+            recommended_items.append(item)
+
+    return recommended_items
 
 if __name__ == '__main__':
     try:
         shop_data = get_fortnite_shop()
-        recommend_skins(shop_data)
+        print(recommend_items(shop_data, {
+            'preferred_types': ['outfit', 'weapon', 'backpack'],
+            'preferred_rarities': ['legendary', 'epic'],
+            'max_price': 2000
+        }))
     except Exception as e:
         print(f"Erro: {e}")

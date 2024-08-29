@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.skins-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skin-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 10px;
+}
+
+.skin-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.skin-card h2 {
+    color: #555;
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.skin-card p {
+    color: #777;
+}
